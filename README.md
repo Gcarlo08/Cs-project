@@ -1,4 +1,12 @@
 # Cs-project
+#9/28/26 Scrum
+#Discussing group roles and how we are actually going to make this work
+#Jose is working on graphics/interface
+#Filtering system: Michael and Giancarlo
+#API/Retrieval/actually connecting script to Outlook: Tafara and Giovanni
+# WE are figuring out "due dates" for each member's tasks, figuring out what to do step by step
+# Adding members to GitHub repository
+# Create a sheet where we can report our work
 
 # 9/25/26 scrum:
 # Topics talked about: 
