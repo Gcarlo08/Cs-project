@@ -1,4 +1,7 @@
 # Cs-project
+#10/3/26 Scrum
+#Discussed mainly about if the workload between group members was even. 
+#Possible ideas for importance ranking system: 1. Work related emails 2. Subscriptions email 3. Unknown/ informal emails. Parts assigned remained the same as written in previous meeting.
 #9/28/26 Scrum
 #Discussing group roles and how we are actually going to make this work
 #Jose is working on graphics/interface
