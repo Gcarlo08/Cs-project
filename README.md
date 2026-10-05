@@ -1,4 +1,9 @@
 # Cs-project
+# 10/5/26 scrum  
+	figuring out API programs(possible programs: Azure, and looking for others)
+	discussing ranking + point system: if has "@monmouth.edu" + points
+	filtered by student Vs teacher 
+	starting boiler plate layout
 # 10/3/26 Scrum
 	Discussed mainly about if the workload between group members was even. 
 	Possible ideas for importance ranking system: 1. Work related emails
