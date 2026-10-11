@@ -1,15 +1,15 @@
 # Cs-project
 
-#Progress:
-Priority system: in development
-graphics: in resarch 
-api work: in resarch
+# Progress:
+	Priority system: in development
+	graphics: in research 
+	api work: in research
 
-#10/11/26 scrum
-Created all main files needed for our program (all in main branch)
-Began working on the priority system for the emails
-Api's are still in the resarch stage
-graphics are in the resarch stage
+# 10/11/26 scrum
+	Created all main files needed for our program (all in main branch)
+	Began working on the priority system for the emails
+	Api's are still in the resarch stage
+	graphics are in the resarch stage
 
 
 # 10/5/26 scrum  
