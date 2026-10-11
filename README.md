@@ -1,4 +1,17 @@
 # Cs-project
+
+#Progress:
+Priority system: in development
+graphics: in resarch 
+api work: in resarch
+
+#10/11/26 scrum
+Created all main files needed for our program (all in main branch)
+Began working on the priority system for the emails
+Api's are still in the resarch stage
+graphics are in the resarch stage
+
+
 # 10/5/26 scrum  
 	figuring out API programs(possible programs: Azure, and looking for others)
 	discussing ranking + point system: if has "@monmouth.edu" + points
