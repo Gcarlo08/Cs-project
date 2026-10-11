@@ -1,0 +1,380 @@
+{
+  "value": [
+    {
+      "id": "email-001",
+      "subject": "Project Meeting Tomorrow",
+      "bodyPreview": "Hey, just confirming our meeting tomorrow at 10 AM.",
+      "body": "Hey Giancarlo,\n\nJust confirming our project meeting tomorrow at 10 AM. Please bring your latest progress report.\n\nThanks,\nSarah",
+      "from": {
+        "name": "Sarah Johnson",
+        "address": "sarah.johnson@example.com"
+      },
+      "toRecipients": [
+        {
+          "name": "Giancarlo Matos",
+          "address": "giancarlo@example.com"
+        }
+      ],
+      "ccRecipients": [],
+      "receivedDateTime": "2026-10-11T14:30:00Z",
+      "isRead": false,
+      "hasAttachments": true,
+      "attachments": [
+        {
+          "name": "Meeting_Agenda.pdf",
+          "contentType": "application/pdf",
+          "size": 245760
+        }
+      ],
+      "importance": "high",
+      "isDraft": false,
+      "categories": [
+        "Work"
+      ],
+      "folder": "inbox",
+      "rank_points": 0,
+      "rank": "Low"
+    },
+    {
+      "id": "email-002",
+      "subject": "Re: Website Design Feedback",
+      "bodyPreview": "I reviewed the latest homepage design. It looks great!",
+      "body": "Hi Giancarlo,\n\nI reviewed the latest homepage design. It looks great! I have a few suggestions for the mobile layout and navigation.\n\nBest,\nAlex",
+      "from": {
+        "name": "Alex Carter",
+        "address": "alex.carter@example.com"
+      },
+      "toRecipients": [
+        {
+          "name": "Giancarlo Matos",
+          "address": "giancarlo@example.com"
+        }
+      ],
+      "ccRecipients": [],
+      "receivedDateTime": "2026-10-11T12:15:00Z",
+      "isRead": true,
+      "hasAttachments": false,
+      "attachments": [],
+      "importance": "normal",
+      "isDraft": false,
+      "categories": [
+        "Development"
+      ],
+      "folder": "inbox",
+      "rank_points": 0,
+      "rank": "Low"
+    },
+    {
+      "id": "email-003",
+      "subject": "Your Order Has Shipped",
+      "bodyPreview": "Good news! Your order is on its way.",
+      "body": "Hello Giancarlo,\n\nYour order #EX-10482 has shipped and is expected to arrive within 3-5 business days.\n\nThank you for shopping with us!\nExample Store",
+      "from": {
+        "name": "Example Store",
+        "address": "shipping@example.com"
+      },
+      "toRecipients": [
+        {
+          "name": "Giancarlo Matos",
+          "address": "giancarlo@example.com"
+        }
+      ],
+      "ccRecipients": [],
+      "receivedDateTime": "2026-10-10T18:45:00Z",
+      "isRead": false,
+      "hasAttachments": false,
+      "attachments": [],
+      "importance": "normal",
+      "isDraft": false,
+      "categories": [
+        "Shopping"
+      ],
+      "folder": "inbox",
+      "rank_points": 0,
+      "rank": "Low"
+    },
+    {
+      "id": "email-004",
+      "subject": "Weekly Team Update",
+      "bodyPreview": "Here are this week's team updates and completed tasks.",
+      "body": "Hi team,\n\nHere is our weekly update:\n\n- Homepage redesign completed\n- API integration testing started\n- Mobile responsiveness improvements in progress\n\nPlease send me any questions before Friday.\n\nThanks,\nMichael",
+      "from": {
+        "name": "Michael Brown",
+        "address": "michael.brown@example.com"
+      },
+      "toRecipients": [
+        {
+          "name": "Giancarlo Matos",
+          "address": "giancarlo@example.com"
+        }
+      ],
+      "ccRecipients": [
+        {
+          "name": "Sarah Johnson",
+          "address": "sarah.johnson@example.com"
+        }
+      ],
+      "receivedDateTime": "2026-10-10T15:20:00Z",
+      "isRead": true,
+      "hasAttachments": true,
+      "attachments": [
+        {
+          "name": "Weekly_Report.xlsx",
+          "contentType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+          "size": 128000
+        }
+      ],
+      "importance": "normal",
+      "isDraft": false,
+      "categories": [
+        "Work",
+        "Reports"
+      ],
+      "folder": "inbox",
+      "rank_points": 0,
+      "rank": "Low"
+    },
+    {
+      "id": "email-005",
+      "subject": "URGENT: Updated Project Requirements",
+      "bodyPreview": "Please review the new requirements before the end of today.",
+      "body": "Hi Giancarlo,\n\nThe client has made changes to the project requirements. Please review the attached document and let us know if the current deadline is still realistic.\n\nRegards,\nDavid",
+      "from": {
+        "name": "David Wilson",
+        "address": "david.wilson@example.com"
+      },
+      "toRecipients": [
+        {
+          "name": "Giancarlo Matos",
+          "address": "giancarlo@example.com"
+        }
+      ],
+      "ccRecipients": [],
+      "receivedDateTime": "2026-10-10T13:05:00Z",
+      "isRead": false,
+      "hasAttachments": true,
+      "attachments": [
+        {
+          "name": "Revised_Requirements.docx",
+          "contentType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+          "size": 86000
+        }
+      ],
+      "importance": "high",
+      "isDraft": false,
+      "categories": [
+        "Work",
+        "Urgent"
+      ],
+      "folder": "inbox",
+      "rank_points": 1,
+      "rank": "Medium"
+    },
+    {
+      "id": "email-006",
+      "subject": "Lunch This Weekend?",
+      "bodyPreview": "Are you free to grab lunch on Saturday?",
+      "body": "Hey!\n\nAre you free to grab lunch this Saturday? We could try that new place downtown.\n\nLet me know!\nChris",
+      "from": {
+        "name": "Chris Miller",
+        "address": "chris.miller@example.com"
+      },
+      "toRecipients": [
+        {
+          "name": "Giancarlo Matos",
+          "address": "giancarlo@example.com"
+        }
+      ],
+      "ccRecipients": [],
+      "receivedDateTime": "2026-10-09T21:10:00Z",
+      "isRead": true,
+      "hasAttachments": false,
+      "attachments": [],
+      "importance": "low",
+      "isDraft": false,
+      "categories": [],
+      "folder": "inbox",
+      "rank_points": 0,
+      "rank": "Low"
+    },
+    {
+      "id": "email-007",
+      "subject": "Password Reset Request",
+      "bodyPreview": "We received a request to reset your password.",
+      "body": "Hello,\n\nWe received a request to reset the password for your Example Account. If you made this request, follow the instructions on the account recovery page. If not, you can ignore this message.\n\nExample Support",
+      "from": {
+        "name": "Example Support",
+        "address": "security@example.com"
+      },
+      "toRecipients": [
+        {
+          "name": "Giancarlo Matos",
+          "address": "giancarlo@example.com"
+        }
+      ],
+      "ccRecipients": [],
+      "receivedDateTime": "2026-10-09T16:40:00Z",
+      "isRead": false,
+      "hasAttachments": false,
+      "attachments": [],
+      "importance": "high",
+      "isDraft": false,
+      "categories": [
+        "Security"
+      ],
+      "folder": "inbox",
+      "rank_points": 0,
+      "rank": "Low"
+    },
+    {
+      "id": "email-008",
+      "subject": "Design Inspiration",
+      "bodyPreview": "I found a few references for our next design iteration.",
+      "body": "Hey,\n\nI found some useful references for our next design iteration. We should focus on clean typography, better spacing, and a consistent color palette.\n\nI'll send over more ideas soon.\n\nAlex",
+      "from": {
+        "name": "Alex Carter",
+        "address": "alex.carter@example.com"
+      },
+      "toRecipients": [
+        {
+          "name": "Giancarlo Matos",
+          "address": "giancarlo@example.com"
+        }
+      ],
+      "ccRecipients": [],
+      "receivedDateTime": "2026-10-08T19:25:00Z",
+      "isRead": true,
+      "hasAttachments": false,
+      "attachments": [],
+      "importance": "normal",
+      "isDraft": false,
+      "categories": [
+        "Development"
+      ],
+      "folder": "inbox",
+      "rank_points": 0,
+      "rank": "Low"
+    },
+    {
+      "id": "email-009",
+      "subject": "Draft: Portfolio Update",
+      "bodyPreview": "Updated portfolio introduction and project descriptions.",
+      "body": "Hi,\n\nHere is my updated portfolio introduction. I am currently refining the project descriptions and adding a few recent projects.\n\nBest,\nGiancarlo",
+      "from": {
+        "name": "Giancarlo Matos",
+        "address": "giancarlo@example.com"
+      },
+      "toRecipients": [
+        {
+          "name": "Sarah Johnson",
+          "address": "sarah.johnson@example.com"
+        }
+      ],
+      "ccRecipients": [],
+      "receivedDateTime": "2026-10-08T17:00:00Z",
+      "isRead": true,
+      "hasAttachments": false,
+      "attachments": [],
+      "importance": "normal",
+      "isDraft": true,
+      "categories": [],
+      "folder": "drafts",
+      "rank_points": 0,
+      "rank": "Low"
+    },
+    {
+      "id": "email-010",
+      "subject": "October Newsletter",
+      "bodyPreview": "Check out this month's product updates and announcements.",
+      "body": "Hello!\n\nWelcome to our October newsletter. This month, we are sharing product updates, upcoming events, and tips to help you get more out of our services.\n\nThanks for reading!\nExample Team",
+      "from": {
+        "name": "Example Newsletter",
+        "address": "newsletter@example.com"
+      },
+      "toRecipients": [
+        {
+          "name": "Giancarlo Matos",
+          "address": "giancarlo@example.com"
+        }
+      ],
+      "ccRecipients": [],
+      "receivedDateTime": "2026-10-07T10:30:00Z",
+      "isRead": true,
+      "hasAttachments": false,
+      "attachments": [],
+      "importance": "low",
+      "isDraft": false,
+      "categories": [
+        "Newsletters"
+      ],
+      "folder": "archive",
+      "rank_points": 0,
+      "rank": "Low"
+    },
+    {
+      "id": "email-011",
+      "subject": "Re: Internship Application",
+      "bodyPreview": "Thank you for applying. We would like to schedule an interview.",
+      "body": "Hello Giancarlo,\n\nThank you for applying for the Web Development Internship. We would like to schedule a short interview to discuss your experience and projects.\n\nPlease reply with your availability for next week.\n\nBest regards,\nTaylor Reed\nRecruiting Team",
+      "from": {
+        "name": "Taylor Reed",
+        "address": "taylor.reed@example.com"
+      },
+      "toRecipients": [
+        {
+          "name": "Giancarlo Matos",
+          "address": "giancarlo@example.com"
+        }
+      ],
+      "ccRecipients": [],
+      "receivedDateTime": "2026-10-06T14:00:00Z",
+      "isRead": false,
+      "hasAttachments": false,
+      "attachments": [],
+      "importance": "high",
+      "isDraft": false,
+      "categories": [
+        "Career"
+      ],
+      "folder": "inbox",
+      "is_read": true,
+      "rank_points": 0,
+      "rank": "Low"
+    },
+    {
+      "id": "email-012",
+      "subject": "Sent: Project Proposal",
+      "bodyPreview": "Attached is the project proposal for your review.",
+      "body": "Hi Michael,\n\nAttached is the project proposal for your review. Please let me know if you have any questions or suggestions.\n\nThanks,\nGiancarlo",
+      "from": {
+        "name": "Giancarlo Matos",
+        "address": "giancarlo@example.com"
+      },
+      "toRecipients": [
+        {
+          "name": "Michael Brown",
+          "address": "michael.brown@example.com"
+        }
+      ],
+      "ccRecipients": [],
+      "receivedDateTime": "2026-10-05T11:30:00Z",
+      "isRead": true,
+      "hasAttachments": true,
+      "attachments": [
+        {
+          "name": "Project_Proposal.pdf",
+          "contentType": "application/pdf",
+          "size": 310000
+        }
+      ],
+      "importance": "normal",
+      "isDraft": false,
+      "categories": [
+        "Work"
+      ],
+      "folder": "sentitems",
+      "rank_points": 0,
+      "rank": "Low"
+    }
+  ]
+}
