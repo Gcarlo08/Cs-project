@@ -4,7 +4,11 @@
 	Priority system: in development
 	graphics: in research 
 	api work: in research
-
+# 10/12/26 scrum
+	Backend logic is mostly functional and has nearly everything to work with minimal errors (still needs work though)
+	Still need to incorporate graphics to make everything visibly pleasing and easier to maneuver
+	Additionally, still need to add all-around device capability 
+	
 # 10/11/26 scrum
 	Created all main files needed for our program (all in main branch)
 	Began working on the priority system for the emails
