@@ -2,8 +2,21 @@
 
 # Progress:
 	Priority system: in development
-	graphics: in research 
-	api work: in research
+	graphics: in progress 
+	api work: in progress
+	backend: lots of work done
+
+# 10/15/26 scrum
+	We did a lot of testing within visual studio to make sure what was working and what wasn't
+	- currrently the email ranking system does work
+	- monmouth.edu emails are unusable because of blocks, program only works with personal emaisl
+	- program can view emails and return email ids  and senders
+	- program does not have an easy way to actually view the contents of an email as of now, only subject and sender
+	- brainstorming how to work through emails that have images/graphics
+	- began working on graphics testing for the program to run within a separate window rather than just through
+	command prompt
+	- used tkinter as a graphics library
+
 # 10/12/26 scrum
 	Backend logic is mostly functional and has nearly everything to work with minimal errors (still needs work though)
 	Still need to incorporate graphics to make everything visibly pleasing and easier to maneuver
