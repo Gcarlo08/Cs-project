@@ -4,6 +4,14 @@
 	Priority system: in development
 	graphics: in research 
 	api work: in research
+
+# 10/22/26 scrum
+	- Coordinated together on meeting our goals for the next few weeks
+	- Michael and Jose honing in on graphics section over the weekend
+	- Giancarlo brainstorming how to share project for use, as of now it only runs natively on his device
+	- graphics testing works on each one of our systems though through visual studio
+	- Ideas on how to share API file which is the one cauding the issue
+
 # 10/12/26 scrum
 	Backend logic is mostly functional and has nearly everything to work with minimal errors (still needs work though)
 	Still need to incorporate graphics to make everything visibly pleasing and easier to maneuver
