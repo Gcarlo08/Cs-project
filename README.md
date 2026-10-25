@@ -5,6 +5,15 @@
 	graphics: in research 
 	api work: in research
 
+
+# 10/25/26 scrum
+	- Graphics will be started to be updated in its designated branch my Michael and Jose
+	- Giancarlo is still on work for trying to make the api work across all devices 
+	-Tafara working on how to auto install the needed apps to run the api
+	
+	
+
+
 # 10/22/26 scrum
 	- Coordinated together on meeting our goals for the next few weeks
 	- Michael and Jose honing in on graphics section over the weekend
