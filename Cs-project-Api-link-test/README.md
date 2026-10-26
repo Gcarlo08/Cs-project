@@ -27,17 +27,29 @@ To use a different app registration, optionally set `OUTLOOK_CLIENT_ID` in the
 environment before running. The sign-in token cache and downloaded messages
 are saved locally and ignored by Git.
 
-#Progress:
+# Progress
 Priority system: in development
-graphics: in resarch
-api work: in resarch
+Graphics: in research
+API work: in research
 
-#10/11/26 scrum
-Created all main files needed for our program (all in main branch)
-Began working on the priority system for the emails
-Api's are still in the resarch stage
-graphics are in the resarch stage
+# 10/25/26 scrum
+	- Graphics will be started to be updated in its designated branch my Michael and Jose
+	- Giancarlo is still on work for trying to make the api work across all devices
+	-Tafara working on how to auto install the needed apps to run the api
 
+
+
+# 10/22/26 scrum
+	- Coordinated together on meeting our goals for the next few weeks
+	- Michael and Jose honing in on graphics section over the weekend
+	- Giancarlo brainstorming how to share project for use, as of now it only runs natively on his device
+	- graphics testing works on each one of our systems though through visual studio
+	- Ideas on how to share API file which is the one cauding the issue
+
+# 10/12/26 scrum
+	Backend logic is mostly functional and has nearly everything to work with minimal errors (still needs work though)
+	Still need to incorporate graphics to make everything visibly pleasing and easier to maneuver
+	Additionally, still need to add all-around device capability
 
 # 10/5/26 scrum  
 	figuring out API programs(possible programs: Azure, and looking for others)
