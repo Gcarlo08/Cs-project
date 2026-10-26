@@ -10,15 +10,13 @@ FILE_PATH = Path(__file__).parent / "outlook_emails.json"
 
 
 # --------------------------------------------------
-# OUTLOOK SIGN-IN AND EMAIL EXTRACTION
+# OUTLOOK SIGN-IN AND EMAIL EXTRACTION !
 # --------------------------------------------------
 
 def sign_in_to_outlook():
     """Authenticate with Outlook before showing the menu."""
 
-    extraction_script = (
-        Path(__file__).parent / "Outlook-extraction.py"
-    )
+    extraction_script = Path(__file__).parent / "outlook-extraction.py"
 
     if not extraction_script.exists():
         print(f"\nError: {extraction_script.name} was not found.")
@@ -416,6 +414,23 @@ def show_ranked_emails(emails):
         print("Importance:", email.get("importance", "normal"))
 
 
+def clear_cached_sign_in():
+    """Remove the saved Outlook sign-in token cache."""
+
+    cache_path = Path(__file__).resolve().parent / "msal_token_cache.json"
+
+    if cache_path.exists():
+        try:
+            cache_path.unlink()
+            print(f"Cleared cached Outlook sign-in at: {cache_path}")
+            return
+        except OSError as error:
+            print(f"Warning: Could not clear token cache: {error}")
+            return
+
+    print(f"No cached Outlook sign-in found at: {cache_path}")
+
+
 # --------------------------------------------------
 # MAIN MENU
 # --------------------------------------------------
@@ -434,7 +449,8 @@ def main():
         print("3. Search emails")
         print("4. Show unread emails")
         print("5. Rank emails")
-        print("6. Exit")
+        print("6. Clear cached Outlook sign-in")
+        print("7. Exit")
 
         choice = input("Select an option: ").strip()
 
@@ -454,11 +470,14 @@ def main():
             show_ranked_emails(emails)
 
         elif choice == "6":
+            clear_cached_sign_in()
+
+        elif choice == "7":
             print("Goodbye!")
             break
 
         else:
-            print("Invalid choice. Enter 1-6.")
+            print("Invalid choice. Enter 1-7.")
 
 
 if __name__ == "__main__":

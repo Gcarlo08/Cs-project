@@ -1,0 +1,9 @@
+# Local credentials and private mailbox data
+**/.env
+**/.env.*
+**/msal_token_cache.json
+**/outlook_emails.json
+
+# Python-generated files
+**/__pycache__/
+*.py[cod]

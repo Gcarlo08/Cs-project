@@ -1,15 +1,5 @@
 
-import json
-from pathlib import Path
-import msal
-import requests
-
-
-# --------------------------------------------------
-# MICROSOFT CONFIGURATION
-# --------------------------------------------------
-#
-# Keep your existing Microsoft Application (client) ID here.
+import argparse
 import json
 import os
 from pathlib import Path
@@ -19,10 +9,18 @@ import requests
 
 
 # --------------------------------------------------
+# MICROSOFT CONFIGURATION
+# --------------------------------------------------
+#
+# Keep your existing Microsoft Application (client) ID here.
+
+
+# --------------------------------------------------
 # CONFIGURATION
 # --------------------------------------------------
 
-CLIENT_ID = "6d4f4ac2-aaff-437e-a0a6-8bc615ab5ee2"
+DEFAULT_CLIENT_ID = "6d4f4ac2-aaff-437e-a0a6-8bc615ab5ee2"
+CLIENT_ID = os.environ.get("OUTLOOK_CLIENT_ID", DEFAULT_CLIENT_ID).strip()
 
 AUTHORITY = "https://login.microsoftonline.com/common"
 
@@ -78,18 +76,28 @@ def save_token_cache(cache):
             print(f"Warning: Could not save token cache: {error}")
 
 
+def clear_token_cache():
+    """Delete the saved Microsoft sign-in cache."""
+
+    if CACHE_FILE.exists():
+        try:
+            CACHE_FILE.unlink()
+            print(f"Cleared cached Microsoft sign-in at: {CACHE_FILE}")
+            return True
+        except OSError as error:
+            print(f"Warning: Could not clear token cache: {error}")
+            return False
+
+    print(f"No cached Microsoft sign-in found at: {CACHE_FILE}")
+    return True
+
+
 # --------------------------------------------------
 # SIGN IN
 # --------------------------------------------------
 
 def sign_in():
     """Authenticate the user and return an access token."""
-
-    if not CLIENT_ID or CLIENT_ID == "YOUR_CLIENT_ID_HERE":
-        raise RuntimeError(
-            "Set CLIENT_ID to your Microsoft Entra "
-            "application's client ID before running."
-        )
 
     cache = load_token_cache()
 
@@ -245,6 +253,20 @@ def display_emails(emails):
 # --------------------------------------------------
 
 def main():
+    parser = argparse.ArgumentParser(
+        description="Authenticate with Microsoft Outlook and download emails."
+    )
+    parser.add_argument(
+        "--clear-cache",
+        action="store_true",
+        help="Clear the saved Microsoft sign-in cache and exit.",
+    )
+    args = parser.parse_args()
+
+    if args.clear_cache:
+        clear_token_cache()
+        return
+
     try:
         print("Connecting to Microsoft Outlook...")
 
