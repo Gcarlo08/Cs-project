@@ -9,7 +9,7 @@
             "name": "Python Debugger: Current File",
             "type": "debugpy",
             "request": "launch",
-            "program": "${workspaceFolder}/extract-info.py",
+            "program": "${workspaceFolder}/Cs-project-Api-link-test/extract-info.py",
             "console": "integratedTerminal"
         }
     ]

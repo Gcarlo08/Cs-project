@@ -1,17 +1,42 @@
 # Cs-project
 
-# Progress:
-	Priority system: in development
-	graphics: in research 
-	api work: in research
+## Run the Outlook email manager
 
+Use Python 3.9 or newer. From the project folder, install the required packages
+and start the application:
+
+```powershell
+py -m pip install -r requirements.txt
+py extract-info.py
+```
+
+The first run prompts you to sign in to Microsoft. Your account needs access to
+the mailbox, and the app registration must allow device-code sign-in and grant
+the requested `User.Read` and `Mail.Read` permissions. A teammate also needs
+access to this private repository to clone and run the project.
+
+## Outlook setup
+
+The Microsoft Entra client ID is included in the app so teammates can run it
+without configuring an ID. This ID identifies the public desktop app; it is not
+a client secret. Each person still signs in to their own Microsoft account on
+first run. Do not commit client secrets, access tokens, token caches, or mailbox
+data.
+
+To use a different app registration, optionally set `OUTLOOK_CLIENT_ID` in the
+environment before running. The sign-in token cache and downloaded messages
+are saved locally and ignored by Git.
+
+# Progress
+Priority system: in development
+Graphics: in research
+API work: in research
 
 # 10/25/26 scrum
 	- Graphics will be started to be updated in its designated branch my Michael and Jose
-	- Giancarlo is still on work for trying to make the api work across all devices 
+	- Giancarlo is still on work for trying to make the api work across all devices
 	-Tafara working on how to auto install the needed apps to run the api
-	
-	
+
 
 
 # 10/22/26 scrum
@@ -24,14 +49,7 @@
 # 10/12/26 scrum
 	Backend logic is mostly functional and has nearly everything to work with minimal errors (still needs work though)
 	Still need to incorporate graphics to make everything visibly pleasing and easier to maneuver
-	Additionally, still need to add all-around device capability 
-	
-# 10/11/26 scrum
-	Created all main files needed for our program (all in main branch)
-	Began working on the priority system for the emails
-	Api's are still in the resarch stage
-	graphics are in the resarch stage
-
+	Additionally, still need to add all-around device capability
 
 # 10/5/26 scrum  
 	figuring out API programs(possible programs: Azure, and looking for others)
