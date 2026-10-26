@@ -1,6 +1,6 @@
 # Cs-project
 
-## Run the Outlook email manager
+## Instructions
 
 Use Python 3.9 or newer. From the project folder, install the required packages
 and start the application:
@@ -31,6 +31,11 @@ are saved locally and ignored by Git.
 Priority system: in development
 Graphics: in research
 API work: in research
+
+# 10/26/26 scrum
+	- Code for outlook connection merged into main, locations of some files were changed to comply with github rules
+	- Michael and Jose working on graphics 
+	- Currently waiting for Graphic interface to be complete to continue
 
 # 10/25/26 scrum
 	- Graphics will be started to be updated in its designated branch my Michael and Jose
