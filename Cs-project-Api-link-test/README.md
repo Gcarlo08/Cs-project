@@ -32,6 +32,14 @@ Priority system: in development
 Graphics: in research
 API work: in research
 
+# 11/02/26 scrum
+	- Michael and Jose continuing working on graphics
+	- Tafara helping out review code and making sure graphcis code and program are coordinated together
+	- Making sure workload is actually distributed evenly
+	- Giancarlo and Tafara are making sure that the API can actually be distributed through download
+	- Brainstorming how to make the program user friendly
+		adding buttons for auto pip installs????
+	
 # 10/26/26 scrum
 	- Code for outlook connection merged into main, locations of some files were changed to comply with github rules
 	- Michael and Jose working on graphics 
