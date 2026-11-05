@@ -32,6 +32,13 @@ Priority system: in development
 Graphics: in research
 API work: in research
 
+# 11/05/26 scrum
+	- Tafara is beginning work API stabilization
+	- Jose & Michael continuing work on graphics
+	- Giancarlo is overseeing and essentially quality control after doing the heavy lifting with the backend
+	- Checking up on our roles and responsibilities
+	- Research continuing on using tkinter
+		
 # 11/02/26 scrum
 	- Michael and Jose continuing working on graphics
 	- Tafara helping out review code and making sure graphcis code and program are coordinated together
