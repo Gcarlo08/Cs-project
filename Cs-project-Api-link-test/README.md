@@ -32,7 +32,11 @@ Priority system: in development
 Graphics: in research
 API work: in research
 
-# 11/95/26 scrum
+# 11/12/26 scrum
+	- Jose figured out how to get program working on any computer (assuming python is intalled on the computer prior)
+	- Now brainstorming how to get the whole thing maybe packacged as a whole executable so that any casual user with no computer knowledge can use it
+	
+# 11/09/26 scrum
 	- Work is being done on local machines/need to push as pull requests
 	- Michael and Jose coordinating with different ends of work on the graphics interface
 	- Figuring out API distribution
