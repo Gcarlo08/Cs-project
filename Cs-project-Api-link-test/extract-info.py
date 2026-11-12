@@ -1,13 +1,29 @@
 
 import json
+import importlib.util
 import subprocess
 import sys
 import re
+
+
 from pathlib import Path
+
+REQUIREMENTS_FILE = Path(__file__).parent / "requirements.txt"
+
+if importlib.util.find_spec("msal") is None:
+    subprocess.check_call([
+        sys.executable,
+        "-m",
+        "pip",
+        "install",
+        "-r",
+        str(REQUIREMENTS_FILE),
+    ])
+
+import msal
 
 # File containing emails retrieved from Microsoft Outlook
 FILE_PATH = Path(__file__).parent / "outlook_emails.json"
-
 
 # --------------------------------------------------
 # OUTLOOK SIGN-IN AND EMAIL EXTRACTION !
