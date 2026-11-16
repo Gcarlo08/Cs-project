@@ -32,6 +32,12 @@ Priority system: in development
 Graphics: in research
 API work: in research
 
+# 11/14/26 scrum
+	- Michael implemented GUI which is still heavy WIP, but is functioning to a certain level
+	- testing and feedback from classmates
+	- Working on fixing GUI so that it actually outputs everything from ranking system instead of just email extraction
+	- Also working on making the program run in just one clean window rather than having the terminal always present
+	
 # 11/12/26 scrum
 	- Jose figured out how to get program working on any computer (assuming python is intalled on the computer prior)
 	- Now brainstorming how to get the whole thing maybe packacged as a whole executable so that any casual user with no computer knowledge can use it
