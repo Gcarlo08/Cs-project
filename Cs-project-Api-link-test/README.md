@@ -32,6 +32,9 @@ Priority system: in development
 Graphics: in research
 API work: in research
 
+User Input from class:
+The id's are confusing when displayed
+Very cluttered for now; shows the raw data of the back end
 # 11/12/26 scrum
 	- Jose figured out how to get program working on any computer (assuming python is intalled on the computer prior)
 	- Now brainstorming how to get the whole thing maybe packacged as a whole executable so that any casual user with no computer knowledge can use it
