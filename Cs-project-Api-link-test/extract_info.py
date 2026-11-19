@@ -3,7 +3,7 @@ import json
 import importlib.util
 import subprocess
 import sys
-import re 
+import re
 
 
 from pathlib import Path
@@ -29,10 +29,10 @@ FILE_PATH = Path(__file__).parent / "outlook_emails.json"
 # OUTLOOK SIGN-IN AND EMAIL EXTRACTION !
 # --------------------------------------------------
 
-def sign_in_to_outlook():
+def sign_in_to_outlook(message_callback=print, max_emails=None):
     """Authenticate with Outlook before showing the menu."""
 
-    extraction_script = Path(__file__).parent / "outlook-extraction.py"
+    extraction_script = Path(__file__).parent / "outlook_extraction.py"
 
     if not extraction_script.exists():
         print(f"\nError: {extraction_script.name} was not found.")
@@ -46,18 +46,31 @@ def sign_in_to_outlook():
     print("Follow the Microsoft sign-in instructions below.\n")
 
     try:
-        result = subprocess.run(
-            [sys.executable, str(extraction_script)],
-            check=False
+        module_spec = importlib.util.spec_from_file_location(
+            "outlook_extraction", extraction_script
         )
 
-    except Exception as error:
-        print(f"\nCould not start Outlook authentication: {error}")
-        return False
+        if module_spec is None or module_spec.loader is None:
+            print("\nCould not load Outlook extraction module.")
+            return False
 
-    if result.returncode != 0:
-        print("\nOutlook authentication or extraction failed.")
-        print("The email manager will not start.")
+        outlook_extraction = importlib.util.module_from_spec(module_spec)
+        module_spec.loader.exec_module(outlook_extraction)
+
+        access_token = outlook_extraction.sign_in(
+            message_callback=message_callback
+        )
+        if not access_token:
+            return False
+
+        extracted_emails = outlook_extraction.get_emails(
+            access_token=access_token,
+            max_emails=max_emails,
+        )
+        outlook_extraction.save_emails(extracted_emails)
+
+    except Exception as error:
+        print(f"\nOutlook authentication or extraction failed: {error}")
         return False
 
     if not FILE_PATH.exists():
@@ -97,7 +110,7 @@ def load_emails():
 
     except FileNotFoundError:
         print("Error: outlook_emails.json was not found.")
-        print("Run Outlook-extraction.py first.")
+        print("Run outlook_extraction.py first.")
         return []
 
     except (json.JSONDecodeError, KeyError) as error:
@@ -323,58 +336,39 @@ def rank_emails(emails):
     """
     Rank emails based on sender, subject, and body.
 
-    High: 5 or more points
-    Medium: 3-4 points
-    Low: 0-2 points
+    High: 3 or more points
+    Medium: 1-2 points
+    Low: 0 points
 
-    Each matching keyword contributes points. Typical spam email keywords give negative values
+    Each matching keyword contributes points.
     """
 
-    high_priority_keywords = {
-        "urgent":5,
-        "action required":5,
-        "immediate action":5,
-        "as soon as possible":4,
-        "deadline": 3,
-        "time sensitive":3,
-        "critical":4,
-        "overdue":4,
-        "due today":3,
-        "emergency":5,
-        "due tomorrow":3,
-        "due tonight":3,
-        "expires":2,
-        "expiring":2,
-        "past due": 3
-    }
+    high_priority_keywords = [
+        "urgent",
+        "action required",
+        "immediate action",
+        "as soon as possible",
+        "deadline",
+        "time sensitive",
+        "critical",
+        "overdue",
+        "due today",
+        "emergency"
+    ]
 
-    medium_priority_keywords = {
-        "important":2,
-        "please review":2,
-        "response needed":2,
-        "follow up":2,
-        "follow-up":2,
-        "meeting":2,
-        "assignment":1,
-        "application":1,
-        "reminder":2,
-        "due soon":2
-    }
-    low_priority_keywords = {
-        "newsletter":-2,
-        "% off":-2,
-        "unsubscribe":-2,
-        "limited time":-1,
-        "buy now":-1,
-        "save up to":-1,
-        "special offer":-1
-    }
-    #makes the dictionary 
-    total_Keywords= {}
-    total_Keywords.update(high_priority_keywords)
-    total_Keywords.update(medium_priority_keywords)
-    total_Keywords.update(low_priority_keywords)
-    
+    medium_priority_keywords = [
+        "important",
+        "please review",
+        "response needed",
+        "follow up",
+        "follow-up",
+        "meeting",
+        "assignment",
+        "application",
+        "reminder",
+        "due soon"
+    ]
+
     for email in emails:
         points = 0
 
@@ -392,18 +386,18 @@ def rank_emails(emails):
 
         # Emails from the specified university domain.
         if sender_email.endswith("@monmouth.edu"):
-            points += 2
+            points += 1
 
-        
-        if "no-reply" in sender_email or "noreply"  in sender_email:
-            points -=1
+        # High-priority keyword matches.
+        for keyword in high_priority_keywords:
+            if keyword in text:
+                points += 2
 
+        # Medium-priority keyword matches.
+        for keyword in medium_priority_keywords:
+            if keyword in text:
+                points += 1
 
-        for keyWord, x in total_Keywords.items():
-            if keyWord in text:
-                points+=x 
-
-       
         # Respect Microsoft's existing importance flag.
         importance = (
             email.get("importance", "normal") or "normal"
@@ -412,14 +406,11 @@ def rank_emails(emails):
         if importance == "high":
             points += 1
 
-        if points < 0:
-            points = 0
-             
         email["rank_points"] = points
 
-        if points >= 5:
+        if points >= 3:
             email["rank"] = "High"
-        elif points >= 3:
+        elif points >= 1:
             email["rank"] = "Medium"
         else:
             email["rank"] = "Low"
