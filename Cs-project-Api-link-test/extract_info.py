@@ -3,7 +3,7 @@ import json
 import importlib.util
 import subprocess
 import sys
-import re
+import re 
 
 
 from pathlib import Path
@@ -323,39 +323,58 @@ def rank_emails(emails):
     """
     Rank emails based on sender, subject, and body.
 
-    High: 3 or more points
-    Medium: 1-2 points
-    Low: 0 points
+    High: 5 or more points
+    Medium: 3-4 points
+    Low: 0-2 points
 
-    Each matching keyword contributes points.
+    Each matching keyword contributes points. Typical spam email keywords give negative values
     """
 
-    high_priority_keywords = [
-        "urgent",
-        "action required",
-        "immediate action",
-        "as soon as possible",
-        "deadline",
-        "time sensitive",
-        "critical",
-        "overdue",
-        "due today",
-        "emergency"
-    ]
+    high_priority_keywords = {
+        "urgent":5,
+        "action required":5,
+        "immediate action":5,
+        "as soon as possible":4,
+        "deadline": 3,
+        "time sensitive":3,
+        "critical":4,
+        "overdue":4,
+        "due today":3,
+        "emergency":5,
+        "due tomorrow":3,
+        "due tonight":3,
+        "expires":2,
+        "expiring":2,
+        "past due": 3
+    }
 
-    medium_priority_keywords = [
-        "important",
-        "please review",
-        "response needed",
-        "follow up",
-        "follow-up",
-        "meeting",
-        "assignment",
-        "application",
-        "reminder",
-        "due soon"
-    ]
-
+    medium_priority_keywords = {
+        "important":2,
+        "please review":2,
+        "response needed":2,
+        "follow up":2,
+        "follow-up":2,
+        "meeting":2,
+        "assignment":1,
+        "application":1,
+        "reminder":2,
+        "due soon":2
+    }
+    low_priority_keywords = {
+        "newsletter":-2,
+        "% off":-2,
+        "unsubscribe":-2,
+        "limited time":-1,
+        "buy now":-1,
+        "save up to":-1,
+        "special offer":-1
+    }
+    #makes the dictionary 
+    total_Keywords= {}
+    total_Keywords.update(high_priority_keywords)
+    total_Keywords.update(medium_priority_keywords)
+    total_Keywords.update(low_priority_keywords)
+    
     for email in emails:
         points = 0
 
@@ -373,18 +392,18 @@ def rank_emails(emails):
 
         # Emails from the specified university domain.
         if sender_email.endswith("@monmouth.edu"):
-            points += 1
+            points += 2
 
-        # High-priority keyword matches.
-        for keyword in high_priority_keywords:
-            if keyword in text:
-                points += 2
+        
+        if "no-reply" in sender_email or "noreply"  in sender_email:
+            points -=1
 
-        # Medium-priority keyword matches.
-        for keyword in medium_priority_keywords:
-            if keyword in text:
-                points += 1
 
+        for keyWord, x in total_Keywords.items():
+            if keyWord in text:
+                points+=x 
+
+       
         # Respect Microsoft's existing importance flag.
         importance = (
             email.get("importance", "normal") or "normal"
@@ -393,11 +412,14 @@ def rank_emails(emails):
         if importance == "high":
             points += 1
 
+        if points < 0:
+            points = 0
+             
         email["rank_points"] = points
 
-        if points >= 3:
+        if points >= 5:
             email["rank"] = "High"
-        elif points >= 1:
+        elif points >= 3:
             email["rank"] = "Medium"
         else:
             email["rank"] = "Low"
