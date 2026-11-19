@@ -32,6 +32,11 @@ Priority system: in development
 Graphics: in research
 API work: in research
 
+# 11/19/2026 scrum
+	-Graphics menu working
+	-Upgraded ranking system
+	-two contributor (Jose & Staphar)files combined 
+
 # 11/14/26 scrum
 	- Michael implemented GUI which is still heavy WIP, but is functioning to a certain level
 	- testing and feedback from classmates
